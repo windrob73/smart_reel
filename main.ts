@@ -15,15 +15,9 @@ let stoptime = 2000
 start = false
 basic.forever(function () {
     while (start == true) {
-        basic.showLeds(`
-            . . . . .
-            . . # . .
-            . # # # .
-            . . # . .
-            . . . . .
-            `)
+        pins.digitalWritePin(DigitalPin.P0, 1)
         basic.pause(runtime)
-        basic.clearScreen()
+        pins.digitalWritePin(DigitalPin.P0, 0)
         basic.pause(stoptime)
     }
 })
